@@ -8,8 +8,9 @@ import Hero04 from './assets/hero04.png';
 import Hero05 from './assets/hero05.png';
 
 function Hero() {
+const windowSize = React.useRef([window.innerWidth, window.innerHeight]);
   return (
-    <HeroWrapper>
+    <HeroWrapper heroHeight={windowSize.current[0]}>
         <HeroTop src={ZakHero} />
         <HeroImg05 src={Hero05} />
         <HeroImg04 src={Hero04} />
@@ -23,13 +24,17 @@ function Hero() {
 export default Hero;
 
 
-const HeroWrapper = styled.section`
+const HeroWrapper = styled.section<{ heroHeight: number }>`
   margin: -125px 0 0;
   width: 50%;
   @media (max-width: 900px) {
-    margin: 20px auto;
-    padding: 0 25px;
-    width: calc(100% - 50px);
+    margin: 0 auto;
+    padding: 0;
+    height: 520px;
+    width: 520px;
+  }
+  @media (max-width: 550px) {
+    height: ${props => props.heroHeight ?? 0}px;
   }
 `;
 

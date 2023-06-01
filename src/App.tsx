@@ -22,10 +22,11 @@ function App() {
         <ContentWrapper reverse={false}>
         <EventInfo>
         <MobilePriceImg src={Price} />
-          <p>Join us Sunday, July 2nd for an evening with <a href="https://www.instagram.com/zaktoscani/" target="_blank" rel="noreferrer">Zak Toscani</a> and opener Barbara Holmes.</p>
+          <p>Join us Sunday, July 2nd in NE Portland for an evening with <a href="https://www.instagram.com/zaktoscani/" target="_blank" rel="noreferrer">Zak Toscani</a> and opener Barbara Holmes.</p>
           <h3>Event Details</h3>
           <ul>
             <li>Doors at 6:30, Show at 7pm</li>
+            <li>Address provided with ticket purchase</li>
             <li>Bring your own chair or blanket</li>
             <li>Refreshments available for purchase (Alcohol + NA)</li>
             <li>No ticket, no entry</li>
@@ -131,6 +132,7 @@ const EventInfo = styled.article`
   strong {
     font-size: 18px;
     font-weight: 500;
+    line-height: 130%;
     margin: 15px 0 5px;
   }
   h3 {
@@ -176,7 +178,6 @@ const Map = styled.img`
   margin: 20px 20px 0 0;
   @media (max-width: 900px) {
     margin: 20px auto;
-    padding: 0 25px;
     width: 90%;
   }
 `;
