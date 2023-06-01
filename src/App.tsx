@@ -4,6 +4,7 @@ import GlobalStyle from './GlobalStyle';
 import Background from './Background';
 import TitleImg from './assets/title.png';
 import Price from './assets/price.png';
+import MapImg from './assets/map.png';
 import Hero from './Hero';
 import LinkButton from './LinkButton';
 
@@ -18,24 +19,39 @@ function App() {
           <Title>Standup Comedy House Show!</Title>
         <HeaderImg src={TitleImg} />
         </Header>
-        <ContentWrapper>
+        <ContentWrapper reverse={false}>
         <EventInfo>
         <MobilePriceImg src={Price} />
-          <p>Join us Sunday, July 2nd for an evening with Zak Toscani and opener Barbara Holmes.</p>
+          <p>Join us Sunday, July 2nd for an evening with <a href="https://www.instagram.com/zaktoscani/" target="_blank" rel="noreferrer">Zak Toscani</a> and opener Barbara Holmes.</p>
           <h3>Event Details</h3>
           <ul>
             <li>Doors at 6:30, Show at 7pm</li>
             <li>Bring your own chair or blanket</li>
             <li>Refreshments available for purchase (Alcohol + NA)</li>
-            <li>Parking is limited, roll with a bud</li>
             <li>No ticket, no entry</li>
           </ul>
-          <p>To buy tickets, send payment of $20 to Venmo. If purchasing more than one ticket, please add a note. By purchasing a ticket, you are agreeing to the <a href="#disclosure">Code of Conduct</a>.</p>
+          <p>To buy tickets, <a href="https://account.venmo.com/pay?recipients=Megan-Withey-1">send payment of $20 to Venmo</a>. If purchasing more than one ticket, please add a note. By purchasing a ticket, you are agreeing to the Code of Conduct*.</p>
           <LinkButton path="https://account.venmo.com/pay?recipients=Megan-Withey-1" label="Buy Tickets Now!" />
         </EventInfo>
         <DesktopPriceImg src={Price} />
          <Hero />
         </ContentWrapper>
+        <ContentWrapper reverse>
+        <Map src={MapImg} />
+        <EventInfo>
+          <h3>Location Details</h3>
+          <strong>Exact address will be supplied after receipt of payment to Venmo.</strong>
+          <ul>
+            <li>Entrance will be on the left-hand side of the house.</li>
+            <li>Please note that this is a private residence, so respect the neighbors by being chill.</li>
+            <li>Parking is limited, so roll with a bud!</li>
+            </ul>
+          <LinkButton path="https://account.venmo.com/pay?recipients=Megan-Withey-1" label="Buy Tickets Now!" />
+        </EventInfo>
+        </ContentWrapper>
+        <Footer>
+          <p>*Just don't be a dick.</p>
+        </Footer>
       </Foreground>
     </Main>
     </>
@@ -80,13 +96,13 @@ const HeaderImg = styled.img`
   }
 `;
 
-const ContentWrapper = styled.section`
+const ContentWrapper = styled.section<{ reverse: boolean}>`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
   @media (max-width: 900px) {
-    flex-direction: column;
+    flex-direction: ${props => props.reverse ? 'column-reverse' : 'column'};
   }
 `;
 
@@ -111,6 +127,11 @@ const EventInfo = styled.article`
     font-size: 16px;
     line-height: 130%;
     margin: 0 15px 15px 0;
+  }
+  strong {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 15px 0 5px;
   }
   h3 {
     font-size: 20px;
@@ -139,6 +160,24 @@ const EventInfo = styled.article`
   }
   a {
     color: #000000;
+    text-decoration-color: #ff00ff;
+    transition: all 0.3s ease;
+    :hover {
+      color: #ff00ff;
+      font-weight: 700;
+    }
+  }
+`;
+
+const Map = styled.img`
+  border: 3px solid #000000;
+  border-radius: 12px;  
+  width: 50%;
+  margin: 20px 20px 0 0;
+  @media (max-width: 900px) {
+    margin: 20px auto;
+    padding: 0 25px;
+    width: 90%;
   }
 `;
 
@@ -171,5 +210,14 @@ const MobilePriceImg = styled.img`
     right: 0;
     max-width: 100px;
     z-index: 15;
+  }
+`;
+
+const Footer = styled.footer`
+  padding: 20px;
+  p {
+    color: #FFFFFF;
+    font-size: 14px;
+    text-align: center;
   }
 `;

@@ -29,7 +29,7 @@ const HeroWrapper = styled.section`
   @media (max-width: 900px) {
     margin: 20px auto;
     padding: 0 25px;
-    width: 90%;
+    width: calc(100% - 50px);
   }
 `;
 
