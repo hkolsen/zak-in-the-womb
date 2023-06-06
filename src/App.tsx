@@ -31,8 +31,8 @@ function App() {
             <li>Refreshments available for purchase (Alcohol + NA)</li>
             <li>No ticket, no entry</li>
           </ul>
-          <p>To buy tickets, <a href="https://account.venmo.com/pay?recipients=Megan-Withey-1">send payment of $20 to Venmo</a>. If purchasing more than one ticket, please add a note. By purchasing a ticket, you are agreeing to the Code of Conduct*.</p>
-          <LinkButton path="https://account.venmo.com/pay?recipients=Megan-Withey-1" label="Buy Tickets Now!" />
+          <p>To buy tickets, <a href="https://account.venmo.com/u/megan-withey-1">send payment of $20 to venmo.com/megan-withey-1</a>. If purchasing more than one ticket, please add a note. By purchasing a ticket, you are agreeing to the Code of Conduct*.</p>
+          <LinkButton path="https://account.venmo.com/u/megan-withey-1" label="Buy Tickets Now!" />
         </EventInfo>
         <DesktopPriceImg src={Price} />
          <Hero />
@@ -47,7 +47,7 @@ function App() {
             <li>Please note that this is a private residence, so respect the neighbors by being chill.</li>
             <li>Parking is limited, so roll with a bud!</li>
             </ul>
-          <LinkButton path="https://account.venmo.com/pay?recipients=Megan-Withey-1" label="Buy Tickets Now!" />
+          <LinkButton path="https://account.venmo.com/u/megan-withey-1" label="Buy Tickets Now!" />
         </EventInfo>
         </ContentWrapper>
         <Footer>
