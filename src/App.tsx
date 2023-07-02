@@ -22,7 +22,7 @@ function App() {
         <ContentWrapper reverse={false}>
         <EventInfo>
         <MobilePriceImg src={Price} />
-          <p>Join us Sunday, July 2nd in NE Portland for an evening with <a href="https://www.instagram.com/zaktoscani/" target="_blank" rel="noreferrer">Zak Toscani</a> and opener Barbara Holmes.</p>
+          <p>Join us Sunday, July 2nd in NE Portland for an evening with <a href="https://www.instagram.com/zaktoscani/" target="_blank" rel="noreferrer">Zak Toscani</a> and opener Lonnie Bruhn. Hosted by Barbara Holmes.</p>
           <h3>Event Details</h3>
           <ul>
             <li>Doors at 6:30, Show at 7pm</li>
